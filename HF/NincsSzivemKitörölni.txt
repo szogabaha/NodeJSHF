@@ -1,0 +1,55 @@
+Magic mushrooms and where to find them
+index.html  - mezők listája, mező hozzáadása
+mushrooms.html - Gombák listája,  gombaleírás, back delete edit
+editor.html - Gomba módosítása, done
+
+Routing:
+
+renderMW
+CheckForEmptyInputMW
+CheckForSameMW
+
+
+getFieldsMW ----
+getFieldMW----
+addFieldMW(fieldnévleírás)---
+
+getMushroomnamesMW--
+getMushroomMW--
+delMushroomMW---
+addMushRoomMW--
+
+
+
+GET / - index.html ----------
+  getFieldsMW
+  addFieldMW(parameter: field neve és leírása)
+  overViewFieldMW(parameter: az a Field, amelyiken a kurzor van)
+  renderMW(index.html);
+
+POST / - index.html -----
+
+GET /fieldID/mushroomID - mushrooms.html---------------
+  renderMW
+  getMushroomnamesMW
+  getMushroomMW
+  getFieldMW
+
+POST /fieldID/mushroomID - mushrooms.html --------------
+  getMushroomNamesMW
+  getMushroomMW
+  getFieldMW
+
+GET /fieldID/mushrooms/delete ------
+  renderMW
+  getMushroomMW
+  delMushroomMW
+  getFieldMW
+
+GET, POST /fieldID/mushroomID/edit - editor.html ------------
+  renderMW
+  getFieldMW
+  getMushroomMW
+  CheckForEmptyInputMW
+    CheckForSameMW
+  addShroomMW

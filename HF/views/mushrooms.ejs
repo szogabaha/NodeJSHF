@@ -1,0 +1,59 @@
+
+<%- include('header'); -%>
+	<div class="root">
+		<header><h1 align="center">Mushrooms of <%= field.name %></h1></header>
+		<div class="title">
+			<button style="background-color: #B7D6AC;" onclick="window.location.href = '/<%= field._id%>/new/mushroom';" >Add new</button>
+		</div>
+		<main class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<form method="post" >
+					<select id="mushroomList" name="mushroomList" multiple>
+						<%mushrooms.forEach(function(shroom){%>
+								<%if(shroom._location.equals(field._id)) {%><option onclick="window.location.href = '/<%=field._id %>/mushrooms/<%= shroom._id %>'" value=" <%= shroom %>" ><%=shroom.name%> </option><%}%>
+						<% }); %>
+
+					</select>
+					</form>
+				</div>
+				<div class="col-sm-6">
+					<footer>
+						<% if( typeof mushroom != 'undefined'){%>
+									<h3>Description of <%=mushroom.name %></h3>
+								<span>
+									<p>name: <%= mushroom.name %></p>
+									<p>Colour: <%= mushroom.colour %></p>
+									<p>suggested for kids: <%= mushroom.suggested %></p>
+									Duration: <%= mushroom.duration %>
+								</span>
+						<% } %>
+					</footer>
+				</div>
+
+
+			</div>
+			<div class="row">
+				<div class="col-sm-2">
+					<button class="buttonm"  onclick="window.location.href = '/';">Back</button>
+
+				</div>
+
+				<div class="col-sm-4" style="padding-left:10%;margin-left: 25%;">
+					<% if( typeof mushroom != 'undefined'){%>	<button class="buttonm" type="post" style="background-color:red; color :white;" onclick="window.location.href = '/<%= field._id %>/<%=mushroom._id %>/delete';" >Delete</button><% } %>
+				</div>
+
+				<div class="col-sm-3" >
+				<% if( typeof mushroom != 'undefined'){%>	<button class="buttonm" onclick="window.location.href = '/<%=field._id%>/<%=mushroom._id %>/edit';">Edit</button> <% } %>
+
+				</div>
+			</div>
+		</main>
+
+
+	</div>
+
+
+
+
+<%- include('footer'); -%>

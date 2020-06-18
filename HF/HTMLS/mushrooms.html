@@ -1,0 +1,101 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<style>
+		.button {
+		
+			width: 80%;
+			margin: 10px auto;
+			
+			padding: 10%;
+			background: #B7D6AC;
+		}
+		
+		.root {
+			width: 1000px;
+			background: #92C47D;
+			margin: 20px auto;
+			padding: 10px;
+			border: solid 2px gray
+		}
+		
+		.title {
+			text-align: left;
+		}
+		
+		body {
+			background: #f4f4f4;
+		}
+		
+		.root footer {
+			width: 80%;
+			margin: auto;
+			text-align: center;
+			background: #DCDCDC;
+		}
+		#mushrooms {
+			margin-left: 15%;
+			padding-right: 16.3%;
+			background-color: #B7D6AC;
+		}
+		
+	</style>
+</head>
+<body style="background-color:#69A84F;">		
+	<div class="root">
+		<header><h1 align="center">Mushrooms of Nebraska</h1></header>
+		<div class="title">
+			<button style="background-color: #B7D6AC;">Add new</button>
+			<input type="text"></input>
+		</div>
+		<main class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<form action="/action_page.php">
+					<select id="mushrooms" name="mushrooms" multiple>
+					  <option value="shroom 1">Vicces gomba</option>
+					  <option value="shroom 2">Aranyos gomba</option>
+					  <option value="shroom 3">Sad gomba</option>
+					  <option value="shroom 4">Haragos gomba</option>
+					</select>
+					</form>
+				</div>
+				<div class="col-sm-6">
+					<footer>
+						<h3>Description of Aranyos gomba</h3>
+						<span><p>name: Aranyos gomba</p>
+						<p>Colour: Purple</p>
+						<p>suggested for kids: yes </p>
+						Duration: 10 hours
+						</span>
+					</footer>
+				</div>
+				
+			
+			</div>
+			<div class="row">	
+				<div class="col-sm-2">
+					<button class="button"  onclick="window.location.href = 'index.html';">Back</button>
+					
+				</div>
+				
+				<div class="col-sm-4" style="padding-left:10%;margin-left: 25%;">
+					<button class="button" style="background-color:red; color :white;" onclick="window.location.href = 'editor.html';" >Delete</button>	
+				</div>
+				
+				<div class="col-sm-3" >
+					<button class="button" onclick="window.location.href = 'editor.html';">Edit</button>
+					
+				</div>
+			</div>
+		</main>
+		
+		
+	</div>
+	
+
+
+
+</body>
+</html>

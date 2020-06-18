@@ -1,0 +1,36 @@
+<%- include('header'); -%>
+
+	<div class="root">
+		<header><h1>Fields of the magic mushrooms</h1></header>
+		<div class="titlei">
+			<form method="POST">
+				<input type="submit" value="Add new">
+				<input type="text" name="inputName"></input>
+				<input type="text" name="inputDesc"></input>
+			</form>
+			<%if(typeof fielderror!=='undefined'){ %><label style="background-color:red; color:white;"><%= fielderror%></label> <% }%>
+		</div>
+		<main class="container">
+			<div class="row">
+				<% fields.forEach(function(onefield){ %>
+						<div class=" col-4">
+					<%if (typeof field=='undefined'||onefield==field){ %>				<button class="button" onmousedown="window.location.href = '/<%= onefield._id %>/mushrooms'"  onmouseover="window.location.href = '/<%=onefield._id %>'"><%= onefield.name %></button>
+						<%}else{%><button class="button" onmousedown="window.location.href = '/<%= onefield._id %>/mushrooms'" onmouseout="window.location.href = '/'" onmouseleave="window.location.href = '/'"><%= onefield.name %></button>		<% } %>
+						</div>
+					<%})%>
+
+			</div>
+
+		</main>
+		<footer>
+			<%if (typeof field!=='undefined'){ %>
+				<h3><%= field.name %></h3>
+				<span id="txt"><%= field.description%></span>
+			<% field=null;} else{%>
+				<h3> Description </h3>
+				<span id="txt"> Access the description of a Field by moving the cursor over the name of it.</span>
+			<% }%>
+		</footer>
+	</div>
+
+<%- include('footer'); -%>
